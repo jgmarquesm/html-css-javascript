@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <!-- Aparece como titulo da aba no navegador -->
+    <title>Curso HTML</title>
+
+</head>
+
+<body>
+
+    <h1>Hello, World!</h1>
+    <ul>
+        <li>
+            <a href="./blog/blog.html">Meu Blog</a>
+        </li>
+    </ul>
+    <!-- Isso e um comentario em HTML -->
+
+    <!-- Cabeçalhos -->
+    <!-- Existem 6 níveis de cabeçalho -->
+    <h1>Cabeçalho nível 1</h1>
+    <h2>Cabeçalho nível 2</h2>
+    <h3>Cabeçalho nível 3</h3>
+    <h4>Cabeçalho nível 4</h4>
+    <h5>Cabeçalho nível 5</h5>
+    <h6>Cabeçalho nível 6</h6>
+
+    <hr>
+
+    <!-- Paragrafos -->
+    <!-- <p> SOME TEXT </p> -->
+    <h3>Paragrafos</h3>
+    <p>
+        Lorem ipsum dolor <strong>sit amet consectetur</strong> adipisicing elit. Nesciunt illum molestias, porro obcaecati rerum quas vel accusantium culpa laboriosam quis fugiat autem placeat facilis facere itaque ipsum asperiores repudiandae pariatur?
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, dolore tempora. Quaerat, veniam. Perferendis quam, neque laudantium vero optio suscipit.
+    </p>
+
+    <hr>
+
+    <!-- Elementos Inline -->
+    <!-- Exemplos: <span>, <img>, <a>, <strong>... -->
+    <!-- Nao iniciam uma nova linha e ocupam apenas a largura necessaria -->
+
+    <!-- Elementos Block -->
+    <!-- Exemplos: <div>, <h1>...<h6>, <form>... -->
+    <!-- Iniciam em uma nova linha e ocupam toda a largura da linha. -->
+
+    <!-- Links -->
+    <!-- <a href="url" target="_blank"> some text </a> -->
+    <!-- O atributo href eh a url para o qual sera redirecionado ao clicar -->
+    <!-- O atributo target indica que sera aberta uma nova guia ao inves de redirecionar a atual. -->
+    <h3>Links</h3>
+
+    <p>
+        Meu <a href="https://github.com/jgmarquesm" target="_blank">github</a>.
+    </p>
+
+    <hr>
+
+    <!-- Tabelas -->
+    <!-- │ so para deixar a divisao mais clara-->
+    <h3>Tabelas</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th> │ Linguagem </th>
+                <th> │ Rank Pessoal </th>
+                <th> │ Rank Junho 2022 </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> │ Java </td>
+                <td> │ 1 </td>
+                <td> │ 2 </td>
+            </tr>
+            <tr>
+                <td> │ Python </td>
+                <td> │ 2 </td>
+                <td> │ 1 </td>
+            </tr>
+            <tr>
+                <td> │ Javascript </td>
+                <td> │ unranked yet </td>
+                <td> │ 3 </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- Formularios -->
+    <!-- Podemos colocar as labels e inputs (em dupla) em divs -->
+    <h3>Formularios</h3>
+
+    <form action="index.txt" method="POST">
+        <div>
+            <label for="typetext">type="text":</label><br>
+            <input type="text" placeholder="placeholder=text">
+        </div>
+        <br>
+        <div>
+            <label for="typepassword">type="password":</label><br>
+            <input type="password" placeholder="placeholder=password">
+        </div>
+        <br>
+        <div>
+            <label for="select">select:</label>
+            <select name="selecttest" id="selecttest">
+                    <option value="opcao1">op1</option>
+                    <option value="opcao2">op2</option>
+                    <option value="opcao3">op3</option>
+                </select>
+        </div>
+        <br>
+        <div>
+            <label for="typeradio">type="radio":</label><br>
+            <input type="radio">
+        </div>
+        <br>
+        <div>
+            <label for="typecheckbox">type="checkbox":</label><br>
+            <input type="checkbox">
+        </div>
+        <br>
+        <div>
+            <label for="typebutton">type="button":</label><br>
+            <input type="button" value="TOP">
+        </div>
+        <br>
+        <div>
+            <label for="typeemail">type="email":</label><br>
+            <input type="email" placeholder="placeholder=email">
+        </div>
+        <br>
+        <div>
+            <label for="typefile">type="file":</label><br>
+            <input type="file">
+        </div>
+        <br>
+        <div>
+            <label for="typehidden">type="hidden":</label><br>
+            <input type="hidden">
+        </div>
+        <br>
+        <div>
+            <label for="typeimage">type="image":</label><br>
+            <input type="image" src="./img/html5.jpg" alt="html5 logo" width="100" height="100">
+        </div>
+        <br>
+        <div>
+            <label for="textarea">textarea</label>
+            <textarea name="message"></textarea>
+        </div>
+        <br>
+        <!-- Podemos deixa fora tambem, porem fica mais desorganizado-->
+        <label for="typenumber">type="number":</label><br>
+        <input type="number" placeholder="placeholder=number">
+        <br>
+        <label for="typerange">type="range":</label><br>
+        <input type="range">
+        <br>
+        <label for="typesearch">type="search":</label><br>
+        <input type="search" placeholder="placeholder=search">
+        <br>
+        <label for="typetel">type="tel":</label><br>
+        <input type="tel" placeholder="placeholder=tel">
+        <br>
+        <label for="typedate">type="date":</label><br>
+        <input type="date">
+        <br>
+        <label for="typetime">type="time":</label><br>
+        <input type="time">
+        <br>
+        <label for="typedatetime-local">type="datetime-local":</label><br>
+        <input type="datetime-local">
+        <br>
+        <label for="typeurl">type="url":</label><br>
+        <input type="url" placeholder="placeholder=url">
+        <br>
+        <label for="typereset">type="reset":</label><br>
+        <input type="reset">
+        <br>
+        <label for="typesubmit">type="submit":</label><br>
+        <input type="submit">
+        <br>
+    </form>
+
+    <hr>
+
+    <!-- Botoes -->
+    <h3>Botoes</h3>
+
+    <button>button</button>
+    <button disabled="disabled">button disabled</button>
+    <button type="reset">button reset</button>
+    <button type="submit">button submit</button>
+
+    <hr>
+    <!-- Imagens -->
+    <h3>Imagens</h3>
+
+    <img src="./img/html5.jpg" alt="html5 logo" width="100" height="100">
+
+    <hr>
+
+    <!-- Blockquote -->
+    <h3>Block Quote</h3>
+
+    <blockquote cite="Google.com">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi, veniam!
+    </blockquote>
+
+    <!-- Abbr -->
+
+    <h3>Abreviações</h3>
+
+    <p>Eu amo a <abbr title="World Wide Web">WWW</abbr>.</p>
+
+    <!-- Cite -->
+
+    <h3>Citações</h3>
+
+    <p>Eu estou citando a <cite>mim</cite> mesmo.</p>
+
+    <hr>
+
+    <!-- Tags Semanticas -->
+
+    <h3>Tags Semanticas</h3>
+
+    <ul>
+        <li>
+            header:
+        </li>
+        <br>
+        <li>
+            nav:
+        </li>
+        <br>
+        <li>
+            section:
+        </li>
+        <br>
+        <li>
+            aside:
+        </li>
+        <br>
+        <li>
+            article:
+        </li>
+        <br>
+        <li>
+            footer:
+        </li>
+        <br>
+    </ul>
+
+    <hr>
+
+    <h2>Principais Tags HTML</h2>
+    <!-- Todas as tags podem possuir atributos e esses atributos dao informaçoes sobre
+         um elemento. A declaraçao dos atributos eh sempre feita na taga de abertura
+        e sao no padrao key-value: atributo="valor_do_atributo" -->
+
+    <div>
+
+        <ul>
+
+            <li>
+                <b>h1</b>: Tag para cabeçalho nivel 1;
+            </li>
+            <br>
+            <li>
+                <b>h2</b>: Tag para cabeçalho nivel 2;
+            </li>
+            <br>
+            <li>
+                <b>h3</b>: Tag para cabeçalho nivel 3;
+            </li>
+            <br>
+            <li>
+                <b>h4</b>: Tag para cabeçalho nivel 4;
+            </li><br>
+            <li><b>h5</b>: Tag para cabeçalho nivel 5;
+            </li>
+            <br>
+            <li>
+                <b>h6</b>: Tag para cabeçalho nivel 6;
+            </li>
+            <br>
+            <li>
+                <b>p</b>: Tag para separar Paragrafos;
+            </li>
+            <br>
+            <li>
+                <b>strong</b>: Visualmente deixa o texto em negrito, quando um leitor de tela passa pela tag strong ele idenfifica a enfase gerada;
+            </li>
+            <br>
+            <li>
+                <b>b</b>: Visualmente deixa o texto em negrito, mas diferentemente da tag strong, nao gera a enfase no texto;
+            </li>
+            <br>
+            <li>
+                <b>br</b>: Pula uma linha;
+            </li>
+            <br>
+            <li>
+                <b>ul</b>: Tag para adicionar uma lista nao enumerada;
+            </li>
+            <br>
+            <li>
+                <b>ol</b>: Tag para adicionar uma lista enumerada;
+            </li>
+            <br>
+            <li>
+                <b>li</b> Adiciona um item a lista ul ou ol;
+            </li>
+            <br>
+            <li>
+                <b>em</b>: Visualmente deixa o texto em italico, quando um leitor de tela passa pela tag em ele idenfifica a enfase gerada;
+            </li>
+            <br>
+            <li>
+                <b>i</b>: Visualmente deixa o texto em italico, mas diferentemente da tag em, nao gera a enfase no texto;
+            </li>
+            <br>
+            <li>
+                <b>a</b>: linka uma url;
+            </li>
+            <br>
+            <li>
+                <b>div</b>: Define uma divisao ou secao no HTML;
+            </li>
+            <br>
+            <li>
+                <b>table</b>: Define uma tabela;
+            </li>
+            <br>
+            <li>
+                <b>thead</b>: Define o head da tabela;
+            </li>
+            <br>
+            <li>
+                <b>tbody</b>: Define o body da tabela;
+            </li>
+            <br>
+            <li>
+                <b>tr</b>: Define uma linha da tabela da tabela;
+            </li>
+            <br>
+            <li>
+                <b>th</b>: Define uma coluna do head da tabela (centrallizado e negrito);
+            </li>
+            <br>
+            <li>
+                <b>td</b>: Define uma coluna do body da tabela;
+            </li>
+            <br>
+            <li>
+                <b>form</b>: Define um formulario;
+            </li>
+            <br>
+            <li>
+                <b>label</b>:
+            </li>
+            <br>
+            <li>
+                <b>input</b>:
+            </li>
+            <br>
+            <li>
+                Continua...
+            </li>
+
+        </ul>
+
+    </div>
+
+    <hr>
+
+    <h2>Principais atributos das Tags HTML</h2>
+
+    <div>
+        <ul>
+            <li>
+                <b>href</b>: Recebe a url que sera linkada pela tag a;
+            </li>
+            <br>
+            <li>
+                <b>download</b>: Recebe o nome de um arquivo que sera baixado quando clicar;
+            </li>
+            <br>
+            <li>
+                <b>taregt</b>: Especifica onde sera aberto o link;
+            </li>
+            <br>
+            <li>
+                <b>class</b>: Define um nome para a tag, uma especie de agrupamento. Esse nome ou agrupamento, podemos usar no CSS na hora de estilizar;
+            </li>
+            <br>
+            <li>
+                <b>action</b>:
+            </li>
+            <br>
+            <li>
+                <b>type</b>:
+            </li>
+            <br>
+            <li>
+                <b>id</b>:
+            </li>
+            <br>
+            <li>
+                <b>name</b>:
+            </li>
+            <br>
+            <li>
+                <b>for</b>:
+            </li>
+            <br>
+        </ul>
+    </div>
+
+</body>
+
+</html>

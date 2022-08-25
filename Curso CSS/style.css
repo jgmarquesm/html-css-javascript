@@ -1,0 +1,196 @@
+/*
+h1 {
+    color: rgb(0, 128, 255);
+}
+
+.h1-4e5 {
+    color: #136ACF;
+}
+
+#h1-3 {
+    color: blue;
+}
+*/
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+.container {
+    background-color: #333;
+    color: #eee;
+    width: 80%;
+    /*
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    */
+    margin: auto;
+    padding: 60px;
+    /*
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    */
+    border-radius: 5%;
+    /*
+    border-top: tamanho estilo cor;
+    border-bottom: tamanho estilo cor;
+    border-left: tamanho estilo cor;
+    border-right: tamanho estilo cor;
+    */
+    border: 6px ridge red;
+}
+
+.main-aside h2 {
+    text-align: center;
+}
+
+.main-aside ul {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.main-aside ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-aside ul a:hover {
+    color: blue;
+}
+
+.main-aside ul a:visited {
+    color: darkred;
+}
+
+.main-form {
+    padding-left: 20px;
+}
+
+.main-form .form-group {
+    padding-bottom: 10px;
+}
+
+.main-form .form-group input {
+    padding: 10px;
+    width: 100%;
+}
+
+.button {
+    padding: 15px;
+    background-color: #333;
+    color: #eee;
+    border: none;
+}
+
+.main-form .form-group label {
+    display: block;
+}
+
+.box {
+    width: 80%;
+    margin: auto;
+}
+
+.relative {
+    position: relative;
+    border: 3px solid #333;
+    margin-top: 10px;
+    height: 200px;
+}
+
+.relative .absolute {
+    position: absolute;
+    bottom: 0;
+}
+
+.relative .absolute h1 {
+    margin: 0;
+}
+
+.main-navbar {
+    background: #333;
+    color: #eee;
+    padding: 3px;
+    text-align: center;
+    margin-bottom: 3px;
+    position: sticky;
+    top: 0;
+}
+
+.fixed-button {
+    background: #333;
+    color: #eee;
+    border-radius: 20%;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+.categories ul {
+    list-style: none;
+}
+
+
+/* .categories ul li:first-child {
+    color: red;
+}
+
+.categories ul li:last-child {
+    color: green;
+}
+
+.categories ul li:nth-child(3) {
+    color: blue;
+} */
+
+.categories ul li:nth-child(even) {
+    color: red;
+}
+
+.categories ul li:nth-child(odd) {
+    color: cadetblue;
+}
+
+
+/* CSS sintax
+
+selector {
+    propriedade: valor(es);
+    propriedade: valor(es);
+    propriedade: valor(es);
+    .
+    .
+    .
+    propriedade: valor(es);
+}
+
+Os selector podem ser as tags, ids ou classes.
+- Para usar a tag html como selector, basta digitar a tag sem <>.
+        - Usando a tag como selector, o estilo será usado em todas as tags iguais que não tenham um id ou class.
+- Para usar o id com selector devemos colocar # e o noma do id.
+- Para usar a class como selector  devemos colocar . e nome da class.
+
+-> Usamos o id quando nomeamos apenas 1 elemento e class quando queremos agrupar mais de um elemento.
+
+***** Adicionando cores *****
+
+Podemos adicionar usando o nome da cor (red, blue...), o hexadecimal (#136ACF...), o rgb (0, 128, 255) e o rgba (0, 128, 255, 0.5) 
+
+***** Adicionando fontes *****
+
+Além das fontes que játemos por padrão no CSS, podemos usar fontes externas como do Google fonts por exemplo.
+*/

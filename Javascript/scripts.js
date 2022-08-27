@@ -168,29 +168,28 @@ console.log(grupoSelecionado);
 
 /* Aula 16 - Eventos
 
-
 // Quando clicar na seleção, exibe uma msg
 document.getElementById("click-me").onclick = function() {
     alert("Você clicou no botão!")
-};
+}
 
 
 // Quando o mouse passa pela seleção, exibe uma msg
 document.getElementById("hover-me").onmouseover = function() {
     alert("Você passou com o cursor no botão!")
-};
+}
 
 
 // Quando o mouse sai fora da seleção, exibe uma msg
 document.getElementById("leave-me").onmouseout = function() {
     alert("Você saiu com o cursor do botão!")
-};
+}
 
 
 // Monitora em qualquer lugar uma tecla pressionada
 document.onkeydown = function() {
     alert("Você apertou a tecla: " + event.keyCode);
-};
+}
 
 function buttonClicked() {
     alert("Você clicou em um botão");
@@ -209,7 +208,7 @@ botao.onclick = function() {
     
     this.style.backgroundColor = "#8B008B";
     this.style.transform = "translateX(250px)";
-};
+}
 */
 
 /* Aula 18 - Outros getElement
@@ -225,7 +224,7 @@ console.log(exemplo2);
 */
 
 
-// Aula 19 - Loop For e For in
+/* Aula 19 - Loop For e For in
 
 // For
 for (var a = 0; a <= 5; a++) {
@@ -234,7 +233,7 @@ for (var a = 0; a <= 5; a++) {
 
 
 var alunos = ['Pedro', 'Maria', 'José', 'João', 'Carlos'];
-for (var aluno = 0; aluno <= alunos.length; aluno++) {
+for (var aluno = 0; aluno < alunos.length; aluno++) {
     console.log(alunos[aluno]);
 }
 
@@ -246,7 +245,7 @@ var carro = {
 
 }
 
-/ For in
+// For in
 for (var prop in carro) {
     console.log(prop + ": " + carro[prop]);
 
@@ -261,5 +260,171 @@ for (let elem = 0; elem < elementos.length; elem++) {
 
 for (var elem in elementos) {
     elementos[elem].style.color = "orange";
-    elementos[elem].style.color = "bold";
+    elementos[elem].style["font-weight"] = "bold";
 }
+*/
+
+/* Aula 20 - Loop While e do While
+
+var count = 0;
+
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+var elementos = document.getElementsByTagName("h4");
+var counter = 0;
+
+// Fazendo o exemplo do Loop for e for in usando while
+while (counter < elementos.length) {
+    elementos[counter].style.color = "orange";
+    elementos[counter].style["font-weight"] = "bold";
+    counter++;
+}
+
+// Assim como em Java, o Loop while acontece somente se a condição for satisfeita desde o início, 
+// Já o loop do while execulta pelo menos uma vez mesmo que a condição seja false. ex:
+
+var i = 10;
+
+while (i < 5) {
+    console.log(i + " - Executei o while")
+    i++;
+}
+
+do {
+    console.log("Contador: " + i + " - Executei o do while")
+    i++;
+} while (i < 5);
+*/
+
+/* Aula 21 - Estruturas condicionais
+// if, else if e else
+
+var idade = 18;
+
+if (idade < 18) {
+    console.log("Menor de idade.");
+} else if (idade == 18) {
+    console.log("Tem 18 anos.");
+} else {
+    console.log("Maior de idade.");
+}
+
+var nota = 8;
+var faltas = 5;
+var media = 7;
+
+if (nota < media || faltas > 4) {
+    console.log("Você foi reprovado.");
+} else {
+    console.log("Você foi aporvado!");
+}
+
+
+// É possível usar string e números para teste booleanos, o Javascript converte os valores a depender do 
+// está armazenado na variável testada e sim, isso é muito bizarro.
+// por exemplo:
+
+var nome = "João"; // true, pois está iniciada e não está vazia.
+var sobrenome = ""; // -> false, pois está vazia
+
+if (nome && sobrenome) {
+    console.log("Nome completo: " + nome + " " + sobrenome);
+} else if (sobrenome) {
+    console.log("Sobrenome entendido como false.");
+} else if (!nome) {
+    console.log("Nome entendido com true");
+} else {
+    console.log("Nome: " + nome + ".\nSobrenome: " + sobrenome + ".");
+}
+
+// Valores de variáveis entendidos como false:
+// - undefined
+// - null
+// - 0
+// NaN
+// "" -> string vazia
+*/
+
+/* Aula 22 - Aninhamento de loops e condicionais
+// Proposta de desafio:
+// Considere um clube com diferentes preços de acesso à depender das credenciais do usuário. Implemente as
+// seguintes regras de negócio:
+// - Sócios: entrada gratuita;
+// - Naão sócios maiores de 65 anos: entrada gratuita;
+// - Não sócios menores de 18 anos: entrada R$ 6,00;
+// - Não sócios maiores de 18 anos: entrada R$ 12,00;
+
+// var socio = true;
+// var idade = 24;
+
+// maneira natural
+// if (socio || idade >= 65) {
+//     console.log("Entrada gratuita. Aproveite!");
+// } else if (idade < 18) {
+//     console.log("Valor da entrada: R$ 6,00.");
+// } else if (idade >= 18) {
+//     console.log("Valor da entrada: R$ 12,00.");
+// } else {
+//     console.log("Revise os dados de entrada.")
+// }
+
+// não natural mas equivalente -> Condicionais aninhados
+if (socio || idade >= 65) {
+    console.log("Entrada gratuita. Aproveite!");
+} else {
+    if (idade < 18) {
+        console.log("Valor da entrada: R$ 6,00.");
+    } else {
+        if (idade >= 18) {
+            console.log("Valor da entrada: R$ 12,00.");
+        } else {
+            console.log("Revise os dados de entrada.")
+        }
+    }
+}
+
+var funcionarios = [
+
+    {
+        'nome': 'Carlos Henrique da Silva',
+        'idade': 45,
+        'filhos': ['Mariana Alves da Silva', 'Fernanda Alves da Silva']
+
+    },
+
+    {
+        'nome': 'Maria Helena Pereira',
+        'idade': 32,
+        'filhos': undefined
+
+    },
+
+    {
+        'nome': 'José Feliciano Maia',
+        'idade': 39,
+        'filhos': ['Felipe Ferreira Maia', 'Fábio Ferreira Maia', 'João Ferreira Maia']
+
+    }
+
+];
+
+var listElement = document.getElementById("filhos");
+listElement.innerHTML = "";
+
+for (var a = 0; a < funcionarios.length; a++) {
+
+    if (funcionarios[a].filhos) {
+
+        var listaFilhos = funcionarios[a].filhos;
+
+        for (var b = 0; b < listaFilhos.length; b++) {
+
+            listElement.innerHTML += "<li>" + listaFilhos[b] + " - Filho(a) de: " + funcionarios[a].nome + ". </li>";
+
+        }
+    }
+}
+*/

@@ -584,7 +584,7 @@ var segundos = setInterval(function() {
 }, 1000);
 */
 
-// Aula 28 - Switch
+/* Aula 28 - Switch
 
 function valorPedagio(categoria) {
 
@@ -619,3 +619,393 @@ var categoria4 = "4";
 console.log(valorPedagio(categoria4));
 var categoriaNaoExistente = "5";
 console.log(valorPedagio(categoriaNaoExistente));
+*/
+
+/* Aula 29 - Break e Continue
+// -> break interrompe a execução
+// -> continue pula a execução do item
+
+var x = 1;
+
+while (x <= 10) {
+
+    console.log(x);
+    x++;
+
+    if (x == 5) {
+        break;
+    }
+}
+
+var lista = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610];
+
+for (var i = 0; i < lista.length; i++) {
+
+    if (lista[i] == 144) {
+        console.log("Achei: " + lista[i]);
+        break;
+    }
+    console.log("Tentativa[" + i + "]: " + lista[i]);
+}
+
+var num = 0;
+
+while (num < 20) {
+
+    if (num % 2 == 1) {
+        num++;
+        continue;
+    }
+
+    console.log(num);
+    num++;
+}
+*/
+
+/* Aula 30 - Fomulários
+
+// Select Box
+document.getElementById("mostrar_opcao").onclick = function() {
+
+    // quando há necessidade de mostrar na tela o valor selecionado, podemos fazer assim
+    // var campoSelect = document.getElementById("options");
+    // var indiceSelecionado = campoSelect.options.selectedIndex;
+    // var valorSelecionado = campoSelect.options[indiceSelecionado].innerHTML;
+    // document.getElementById("opcao_selecionada").innerHTML = valorSelecionado;
+    // porém se formos somente nos comunicar com o backend e esperar o response, podemos mandar assim:
+    var valorSelecionado = document.getElementById("options").value;
+    document.getElementById("opcao_selecionada").innerHTML = valorSelecionado; // -> apenas mostrando como fica
+
+}
+
+// Radio Box
+
+document.getElementById("mostrar_radio").onclick = function() {
+
+    var radio = document.getElementsByName("genero");
+    var radioSelected;
+
+    for (var a = 0; a < radio.length; a++) {
+        if (radio[a].checked) {
+            radioSelected = radio[a].value;
+            break;
+        }
+    }
+
+    document.getElementById("radio_selecionado").innerHTML = radioSelected;
+
+}
+
+// Check Box
+
+document.getElementById("mostrar_check").onclick = function() {
+
+    var check = document.getElementsByName("interesse");
+    document.getElementById("check_selecionado").innerHTML = "";
+
+    for (var b = 0; b < check.length; b++) {
+        if (check[b].checked) {
+            document.getElementById("check_selecionado").innerHTML += "<li>" + check[b].value + "</li>";
+        }
+    }
+}
+
+// input Date
+
+// mostrar_data
+// data_evento
+// data_selecionada
+
+
+document.getElementById("mostrar_data").onclick = function() {
+
+    var dataSelect = document.getElementById("data_evento").value;
+    var dataCompleta = new Date(dataSelect);
+    document.getElementById("data_selecionada").innerHTML = dataCompleta;
+
+};
+*/
+
+/* Aula 31 - Evento onchange
+
+// Select Box
+
+document.getElementById("escolaridade").onchange = function() {
+
+    var campo_select = document.getElementById("escolaridade");
+    var indice_selecionado = campo_select.options.selectedIndex;
+    var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+    document.getElementById("escolaridade_selecionada").innerHTML = valor_selecionado;
+
+};
+
+// Check Box
+
+var check = document.getElementsByName("lanche");
+
+for (var a = 0; a < check.length; a++) {
+
+    check[a].onchange = function() {
+
+        document.getElementById("check_selecionado").innerHTML = "";
+
+        for (var b = 0; b < check.length; b++) {
+
+            if (check[b].checked) {
+                document.getElementById("check_selecionado").innerHTML += '<li>' + check[b].value + '</li>';
+            }
+        }
+    }
+}
+*/
+
+/* Aula 43 - Funções Callback
+
+// Funções callback são funções que são passada como argumentos de outras funções e geralmente são executadas no final 
+// da função principal. JS é um linguagem assíncrona.
+
+
+// function pegar_usuario(){
+//     window.setTimeout(function(){
+
+//         var u = {
+//             'nome': 'João'
+//         };
+//         return u;
+//     }, 2000)
+// }
+
+// function saudar_usuario(user) {
+//     console.log('Olá ' + user.nome + ', como vai?');
+// }
+
+// var user = pegar_usuario();
+// saudar_usuario(user);
+
+function pegarUsuario(callback) {
+
+    window.setTimeout(function() {
+
+        var u = {
+            'nome': 'João'
+        };
+
+        callback(u);
+
+    }, 2000);
+
+}
+
+// function saudarUsuario(user) {
+//     console.log('Olá ' + user.nome + ', como vai?');
+// }
+
+var user = pegarUsuario(function(user) {
+    console.log('Olá ' + user.nome + ', como vai?');
+});
+*/
+
+/* Aula 44 - Error Handling
+
+function pegar_usuario() {
+
+    window.setTimeout(function() {
+        var u = {
+            'nome': 'João'
+        };
+        return u;
+    }, 1000);
+
+}
+
+function saudar_usuario(user) {
+    console.log('Olá ' + user.nome + ', como vai?');
+}
+
+// try {
+//     var user = pegar_usuario();
+//     saudar_usuario(user);
+// } catch {
+//     console.log('Olá!');
+// } 
+// finally {
+//     console.log("Esse comando sempre será executado!");
+// }
+// console.log('Novo comando para executar ao final.');
+
+var user = { "nome": "" };
+try {
+
+    if (!user.name) {
+        throw "Nome em branco.";
+    }
+
+    saudar_usuario(user);
+
+} catch (err) {
+    console.log(err);
+}
+*/
+
+/* Aula 45 - If ternário -> Funciona igualmente ao operador ternário em Java.
+// Introduzido no ES6
+
+// condição ? "valor se for verdadeiro" : "valor se for falso";
+
+// Exemplo com if normal:
+var nome = "";
+if (nome) {
+    var mensagem1 = "Olá " + nome;
+} else {
+    var mensagem1 = "Nome não informado.";
+}
+console.log(mensagem1);
+
+// Exemplo com if ternário:
+// nome ? mensagem = "Olá " + nome : mensagem = "Nome não informado.";
+
+// Ou ainda mais simples:
+var mensagem2 = nome ? "Olá " + nome : "Nome não informado.";
+console.log(mensagem2);
+
+// Multiplas condições:
+
+var nome = "João";
+var idade = 24;
+
+var msg = (nome && idade) ? "Olá, " + nome + ". Você tem " + idade + " anos." :
+(!nome && !idade) ? "Nome e idade não informados." :
+(!idade) ? "Idade não informada." :
+"Nome não informado";
+
+console.log(msg);
+*/
+
+/* Aula 46 - Escopo
+
+function criarNome1() {
+    var nome = "João"; // escopo local
+    console.log("Chamando nome dentro da função 1: " + nome + ".");
+}
+criarNome1();
+
+// Para deixar escopo global:
+
+// var nome; // -> escopo global
+// function criarNome2() {
+//     nome = "João Gabriel"
+//     console.log("Chamando nome dentro da função 2: " + nome + ".");
+// }
+// console.log("Chamando nome fora da função2 antes de ter chamado a função2: " + nome + ".");
+// criarNome2();
+// console.log("Chamando nome fora da função2 depois de ter chamado a função2: " + nome + ".");
+
+// É possível criar uma variável noma sem fazer uso do var, let e const, mas ele será sempre global 
+// quando assim feito. Desse modo, podemos fazer o seguinte para deixar a variável global:
+
+function criarNome2() {
+    nome = "João Gabriel"; // escopo global
+    console.log("Chamando nome dentro da função 2: " + nome + ".");
+}
+console.log("Chamando nome fora da função2 antes de ter chamado a função2: " + window.nome + ".");
+criarNome2();
+console.log("Chamando nome fora da função2 depois de ter chamado a função2: " + window.nome + ".");
+
+
+// A keyword 'let' cria uma variável local dentro de qualquer estrutura de bloco:
+
+var x = 0;
+
+if (x == 0) {
+    let nome = "jgmarquesm";
+    console.log("dentro: " + nome);
+}
+
+console.log("fora: " + nome);
+
+// Antes de introduzir a keyword let, era bom garantir que quando fossemos declarar vários loops, usar 
+// nome de variáveis diferentes. Com 'let', não precisamos mais nos preocupar com isso:
+
+for (let a = 0; a < 5; a++) {
+    console.log(a);
+}
+
+for (let a = 0; a < 5; a++) {
+    console.log(a + " hehehe");
+}
+*/
+
+// Keyword 'const' define um constante, ou seja, não podemos mudar seu valor depois de definifa 
+// e inicializada;
+
+/* Aula 47 - Namespaces -> Simulam escopo local no código
+
+// Simulando Namespaces com Objetos:
+
+// var exemploNameSpaceComObjetos = {};
+
+// exemploNameSpaceComObjetos.nome = "João";
+
+// exemploNameSpaceComObjetos.verNome = function() {
+//     console.log(this.nome);
+// }
+
+// exemploNameSpaceComObjetos.verNome();
+
+// ou:
+
+var exemploNameSpaceComObjetos = {
+
+    "nome": "João",
+    "verNome": function() {
+        console.log(this.nome);
+    }
+
+};
+
+exemploNameSpaceComObjetos.verNome();
+
+var exemploNameSpaceComFuncoes = (function() {
+    let nome = "João";
+    return {
+        verNome: function() {
+            return nome;
+        },
+        "mudarNome": function(novoNome) {
+            nome = novoNome;
+        },
+        'apagarNome': function() {
+            nome = null;
+        }
+    }
+})();
+
+console.log(exemploNameSpaceComFuncoes.verNome());
+exemploNameSpaceComFuncoes.mudarNome("João Gabriel");
+console.log(exemploNameSpaceComFuncoes.verNome());
+exemploNameSpaceComFuncoes.apagarNome();
+console.log(exemploNameSpaceComFuncoes.verNome());
+*/
+
+/* Aula 48 - JSON -> JavaScript Object Notation
+
+var funcionario = {
+    'nome': "Fernanda Costa",
+    'd_nascimento': '1988-10-01',
+    'CPF': '111.111.111-11'
+};
+
+// Transforma um Objeto (ou Array) Javascript e transforma em uma String
+var funcionarioJSON = JSON.stringify(funcionario);
+console.log(funcionarioJSON);
+
+// Transforma uma String Javascript e transforma em um Objeto Javascript
+var funcionarioObjeto = JSON.parse(funcionarioJSON);
+console.log(funcionarioObjeto);
+
+// Exemplo Array
+var grupo_A = ['Real Madrid', 'Porto', 'Liverpool', 'Manchester United'];
+
+console.log(JSON.stringify(grupo_A));
+console.log(typeof JSON.stringify(grupo_A));
+*/
